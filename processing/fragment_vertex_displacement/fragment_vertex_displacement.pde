@@ -38,7 +38,7 @@ void setup() {
 
   //voro = loadShader("waves_thing.frag");
   displace = loadShader("manhattan_voronoi_YB_v1.frag");
-  //displace = loadShader("waves_thing.frag");
+  //displace = loadShader("simplex_noise.frag");
   voro = loadShader("3d_cell_noise.frag");
 
   texShader = loadShader("TTT.frag", "TTT.vert");
@@ -69,6 +69,7 @@ void draw() {
   rectMode(CORNER);
   pg.rect(0, 0, width, height);
   pg.endDraw();
+  
   //image(pg, 0, 0);
   //blendMode(ADD);
   
