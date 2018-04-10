@@ -29,6 +29,7 @@ float snoise(vec3 v){
   vec3 i1 = min( g.xyz, l.zxy );
   vec3 i2 = max( g.xyz, l.zxy );
 
+
   // x0 = x0 - 0. + 0.0 * C 
   vec3 x1 = x0 - i1 + 1.0 * C.xxx;
   vec3 x2 = x0 - i2 + 2.0 * C.xxx;
