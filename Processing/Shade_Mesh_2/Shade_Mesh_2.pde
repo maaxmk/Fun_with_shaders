@@ -20,11 +20,11 @@ void setup() {
   fullScreen(P3D);
   cam = new PeasyCam(this, 900);
   
-  shader = loadShader("/Users/max/Documents/Shaders/GLSL/fbm_1.frag");
+  shader = loadShader("../../GLSL/fbm_2.frag");
   shade_graph = createGraphics(1200,1200,P2D);
   shader.set("u_resolution", float(shade_graph.width), float(shade_graph.height));
   
-  blur = loadShader("/Users/max/Documents/Shaders/GLSL/blur.glsl");
+  blur = loadShader("../../GLSL/blur.glsl");
   blur.set("amp",30.0);
   
   mesh_res_x = 300;//320;
@@ -82,8 +82,8 @@ void draw() {
   
   scale(2.0);
   
-  pointLight(205,205,255,-165.6+(0.5+0.5*sin(frameCount*0.01))*380,-130.8+(0.5+0.5*cos(frameCount*0.01))*380,100);
-  pointLight(205,255,205,-165.6+(0.5+0.5*sin(frameCount*0.01+PI))*380,-130.8+(0.5+0.5*cos(frameCount*0.01+PI))*380,100);
+  //pointLight(205,205,255,-165.6+(0.5+0.5*sin(frameCount*0.01))*380,-130.8+(0.5+0.5*cos(frameCount*0.01))*380,100);
+  //pointLight(205,255,205,-165.6+(0.5+0.5*sin(frameCount*0.01+PI))*380,-130.8+(0.5+0.5*cos(frameCount*0.01+PI))*380,100);
   //lights();
   
   // draw displacement mesh

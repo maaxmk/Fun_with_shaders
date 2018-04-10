@@ -22,12 +22,12 @@ void setup() {
   fullScreen(P3D);
   cam = new PeasyCam(this, 900);
   
-  shader = loadShader("/Users/max/Documents/Shaders/GLSL/fbm_2.frag");
+  shader = loadShader("../../GLSL/fbm_2.frag");
   shade_graph = createGraphics(500,500,P2D);
   shader.set("u_resolution", float(shade_graph.width), float(shade_graph.height));
   shader.set("brightness",1.0);
   
-  blur = loadShader("/Users/max/Documents/Shaders/GLSL/blur.glsl");
+  blur = loadShader("../../GLSL/blur.glsl");
   blur.set("amp",30.0);
   
   image = loadImage("/Users/max/Documents/Shaders/image-data/face-05.jpg");
@@ -96,7 +96,7 @@ void draw() {
   noStroke();
   for(int y=0; y<mesh_res_y-1; y++) {
     beginShape(TRIANGLE_STRIP);
-    texture(shade_graph);//image);//
+    texture(shade_graph);//shade_graph);//
     for(int x=0; x<mesh_res_x; x++) {
       
       float z = brit_field[x+y*mesh_res_x];
