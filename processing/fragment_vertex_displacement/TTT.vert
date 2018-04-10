@@ -26,9 +26,11 @@ void main() {
   //mod_pos.z += mod(mod_pos.x, 25) * disp;
   //mod_pos.z += snoise(mod_pos.xy * 0.005 + u_time/5.) *disp;
   
-  //mod_pos.x += k.r * disp;
+  // mod_pos.x += k.r * disp;
+  // mod_pos.y += k.g * disp;
+  // mod_pos.z += k.b * disp;
   mod_pos.z += length(k.rgb) * disp;
-  //mod_pos.z += k.b * disp;
+  
 
   vertColor *= k.r;
   //vertColor *= mod_pos.z/disp; 
