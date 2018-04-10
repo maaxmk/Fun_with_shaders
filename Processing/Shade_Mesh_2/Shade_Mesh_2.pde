@@ -20,11 +20,11 @@ void setup() {
   fullScreen(P3D);
   cam = new PeasyCam(this, 900);
   
-  shader = loadShader("/Users/max/Documents/Shaders/GLSL/fbm_1.frag");
+  shader = loadShader("../../GLSL/fbm_1.frag");
   shade_graph = createGraphics(1200,1200,P2D);
   shader.set("u_resolution", float(shade_graph.width), float(shade_graph.height));
   
-  blur = loadShader("/Users/max/Documents/Shaders/GLSL/blur.glsl");
+  blur = loadShader("../../GLSL/blur.glsl");
   blur.set("amp",30.0);
   
   mesh_res_x = 300;//320;

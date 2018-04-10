@@ -38,7 +38,6 @@ void setup() {
 
   //voro = loadShader("waves_thing.frag");
   displace = loadShader("manhattan_voronoi_YB_v1.frag");
-  //displace = loadShader("pixelized_radius_thing.frag");
   //displace = loadShader("simplex_noise.frag");
   voro = loadShader("3d_cell_noise.frag");
 
@@ -53,7 +52,7 @@ void draw() {
 
   rectMode(CORNER);
   //fill(0);
-  background(180);
+  background(0);
   blendMode(BLEND);
   resetShader();
   //rect(0, 0, width, height);
@@ -92,7 +91,7 @@ void draw() {
   translate(width/2, height/2);  
 
   rotateX(PI/3);
-  rotateX(2*PI*mouseY/height);  
+  //rotateX(2*PI*mouseY/height);  
   //rotateZ(2*PI*mouseX/width);
   translate(-w/2, -h/2);
 
@@ -103,9 +102,7 @@ void draw() {
   texShader.set("disp", 50.);
   texShader.set("the_tex", pg);
 
-  
   shape(mesh(test_image));
-  //box(200);
   //sphere(100);
   popMatrix();
   // ======================== //
@@ -143,9 +140,18 @@ PShape mesh(PImage p)
       u = (float)i/cols * width;
       v = (float)j/rows * height;
       bilbo.vertex(i * scl, j * scl, 0, u, v);
+      //u = (float)i/cols * width;
+      //v = (float)(j+1)/rows * height;
+      //bilbo.vertex(i * scl, (j+1) * scl, 0, u, v);
       u = (float)(i+1)/cols * width;
       v = (float)j/rows * height;
       bilbo.vertex((i+1) * scl, j * scl, 0, u, v);
+      //u = (float)(i+1)/cols * width;
+      //v = (float)(j+1)/rows * height;
+      //bilbo.vertex((i+1) * scl, (j+1) * scl, 0, u, v);
+
+      //bilbo.vertex(i * scl, j * scl, 0);
+      //bilbo.vertex((i+1) * scl, j * scl, 0);
     }
     bilbo.endShape();
   }
